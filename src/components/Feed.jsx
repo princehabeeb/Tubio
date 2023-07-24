@@ -13,6 +13,11 @@ const Feed = () => {
         Copyright 2023 Tubio
       </Typography>
       </Box>
+      <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2}}>
+        <Typography variant='h4' mb={2} sx={{color: 'white'}}>
+         New <span style={{color: '#f31503'}}>Videos</span>
+        </Typography>
+      </Box>
     </Stack>
   )
 }
