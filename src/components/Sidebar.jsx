@@ -3,9 +3,9 @@ import { categories }from '../utils/constants';
 // import { Category } from '@mui/icons-material';
 
 
-const selectedCategory = 'New';
 
-const Sidebar = () => {
+
+const Sidebar = (selectedCategory, setSelectedCategory) => {
   return (
     <Stack 
     direction='row'
