@@ -9,7 +9,8 @@ const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New');
 
   useEffect(()=> {
-     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
+     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+     .then(() => {})
   }, [selectedCategory]);
 
 
@@ -19,8 +20,10 @@ const Feed = () => {
       px:{sx: 0, md: 2}
       }}>
       <Sidebar
-      selectedCategory={selectedCategory}
-      setSelectedCategory={setSelectedCategory}
+      selectedCategory=
+      {selectedCategory}
+      setSelectedCategory=
+      {setSelectedCategory}
       />
       <Typography className='copyright' variant='body2' sx={{mt: 1.5, color: '#fff'}}>
         Copyright 2023 Tubio
@@ -28,7 +31,7 @@ const Feed = () => {
       </Box>
       <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2}}>
         <Typography variant='h4' mb={2} sx={{color: 'white'}}>
-         New <span style={{color: '#f31503'}}>Videos</span>
+        {selectedCategory}<span style={{color: '#f31503'}}>Videos</span>
         </Typography>
         <Videos videos={[]} />
       </Box>
