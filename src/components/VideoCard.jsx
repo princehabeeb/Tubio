@@ -3,7 +3,8 @@ import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 import { CheckCircle} from '@mui/icons-material'
 import { demoThumbnailUrl, demoChannelTitle, demoChannelUrl, demoVideoTitle, demoVideoUrl } from '../utils/constants'
 
-const VideoCard = () => {
+const VideoCard = ({video: {id:{ videoId }, snippet}}) => {
+    console.log(videoId, snippet);
     return (
         <div>
             VideoCard
