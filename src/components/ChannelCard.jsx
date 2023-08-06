@@ -12,7 +12,11 @@ const ChannelCard = ({channelDetail}) => {
             borderRadius: '20px'
         }}
         >
-            ChannelCard
+           <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+              <CardContent sx={{display: 'flex', flexDirection: 'column'}}>
+
+              </CardContent>
+           </Link>
         </Box>
     )
 }
