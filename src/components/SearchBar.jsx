@@ -4,6 +4,8 @@ import { IconButton, Paper, iconButton } from '@mui/material';
 import { Search } from '@mui/icons-material'
 
 function SearchBar() {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <Paper component='form' 
     onSubmit={()=> {}}
@@ -19,7 +21,7 @@ function SearchBar() {
         className='search-bar'
         placeholder='Search..'
         value=''
-        onChange={() => {}}
+        onChange={(e) => setSearchTerm(e.target.value)}
         />
         <IconButton>
           <Search type='submit' sx={{p: '10px', color: 'red'}} />
