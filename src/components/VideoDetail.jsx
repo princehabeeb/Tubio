@@ -9,7 +9,9 @@ import { fetchFromAPI } from '../utils/fetchFromAPI'
 const VideoDetail = () => {
   return (
     <Box minHeight='95vh'>
-
+      <Stack>
+        
+      </Stack>
     </Box>
   )
 }
