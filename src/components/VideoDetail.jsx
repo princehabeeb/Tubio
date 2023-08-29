@@ -11,7 +11,9 @@ const VideoDetail = () => {
     <Box minHeight='95vh' direction={{ xs: 'column', md: 'row' }}>
       <Stack>
         <Box flex={1}>
-          <Box sx={{width: '100%', position: 'sticky', top:'86px'}}></Box>
+          <Box sx={{width: '100%', position: 'sticky', top:'86px'}}>
+            <ReactPlayer />
+          </Box>
         </Box>
       </Stack>
     </Box>
