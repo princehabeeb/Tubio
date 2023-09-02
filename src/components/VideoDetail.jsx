@@ -12,7 +12,7 @@ const VideoDetail = () => {
 
   useEffect(() => {
    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
-   .then((data) => setVideoDetail(data.items[0]))
+   .then((data) => setVideoDetail(data.items[0]));
   }, [id])
 
 
@@ -21,7 +21,7 @@ const VideoDetail = () => {
       <Stack>
         <Box flex={1}>
           <Box sx={{width: '100%', position: 'sticky', top:'86px'}}>
-            <ReactPlayer />
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} />
           </Box>
         </Box>
       </Stack>
