@@ -38,7 +38,7 @@ const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCo
                 <CheckCircle  sx={{fontSize: '12px', color: 'grey', ml:'5px'}} />
               </Typography>
              </Link>
-             <Stack>
+             <Stack direction='row' gap='20px' alignItems='center'>
               <Typography variant='body1' sx={{opacity: 0.7}}>
                   {parseInt(viewCount).toLocaleString()}views
               </Typography>
