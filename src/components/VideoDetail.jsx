@@ -14,6 +14,8 @@ const VideoDetail = () => {
    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
    .then((data) => setVideoDetail(data.items[0]));
   }, [id])
+
+  if (!VideoDetail?.snippet) return 'Loading...'
 const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCount}} = VideoDetail;
 
   return (
@@ -27,8 +29,14 @@ const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCo
             fontWeight='bold'
             p={2}
             >{title}</Typography>
-            <Stack direction='row' justifyContent='space-between'>
-
+            <Stack direction='row' justifyContent='space-between' sx={{color: '#fff'}}
+            py={1} px={2}
+            >
+             <Link to={`/channel/${channelId}`}>
+              <Typography>
+                {channelTitle}
+              </Typography>
+             </Link>
             </Stack>
           </Box>
         </Box>
