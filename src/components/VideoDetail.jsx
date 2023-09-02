@@ -8,7 +8,7 @@ import { fetchFromAPI } from '../utils/fetchFromAPI'
 
 const VideoDetail = () => {
   const [VideoDetail, setVideoDetail] =  useState(null);
-  const [Videos, setVideos] = useState(null);
+  const [videos, setVideos] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -54,6 +54,9 @@ const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCo
           </Box>
         </Box>
       </Stack>
+      <Box px={2} py={{md:1, xs:5}} justifyContent='center' alignItems='center' >
+        <Videos videos={videos} />
+      </Box>
     </Box>
   )
 }
