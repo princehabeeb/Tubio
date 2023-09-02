@@ -33,8 +33,9 @@ const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCo
             py={1} px={2}
             >
              <Link to={`/channel/${channelId}`}>
-              <Typography>
+              <Typography variant={{sm:'subtitle1', md:'h6'}} color='#fff'>
                 {channelTitle}
+                <CheckCircle  sx={{fontSize: '12px', color: 'grey', ml:'5px'}} />
               </Typography>
              </Link>
             </Stack>
