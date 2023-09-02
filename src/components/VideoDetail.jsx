@@ -14,7 +14,7 @@ const VideoDetail = () => {
    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
    .then((data) => setVideoDetail(data.items[0]));
   }, [id])
-const {snippet:{title, channelId, channelTitle }} = VideoDetail;
+const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCount}} = VideoDetail;
 
   return (
     <Box minHeight='95vh' direction={{ xs: 'column', md: 'row' }}>
@@ -27,6 +27,9 @@ const {snippet:{title, channelId, channelTitle }} = VideoDetail;
             fontWeight='bold'
             p={2}
             >{title}</Typography>
+            <Stack direction='row' justifyContent='space-between'>
+
+            </Stack>
           </Box>
         </Box>
       </Stack>
