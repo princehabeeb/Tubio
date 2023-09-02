@@ -8,14 +8,18 @@ import { fetchFromAPI } from '../utils/fetchFromAPI'
 
 const VideoDetail = () => {
   const [VideoDetail, setVideoDetail] =  useState(null);
+  const [Videos, setVideos] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
    .then((data) => setVideoDetail(data.items[0]));
+
+   fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+   .then((data) => setVideos(data.items));
   }, [id])
 
-  if (!VideoDetail?.snippet) return 'Loading...'
+  if (!VideoDetail?.snippet) return 'Loading...';
 const {snippet:{title, channelId, channelTitle }, statistics:{ viewCount, likeCount}} = VideoDetail;
 
   return (
